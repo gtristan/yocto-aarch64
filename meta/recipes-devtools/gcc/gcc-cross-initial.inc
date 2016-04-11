@@ -43,7 +43,8 @@ do_configure_prepend () {
 }
 
 do_compile () {
-    oe_runmake all-gcc configure-target-libgcc
+    oe_runmake all-gcc
+    oe_runmake configure-target-libgcc
 }
 do_install () {
 	( cd ${B}/${TARGET_SYS}/libgcc; oe_runmake 'DESTDIR=${D}' install-unwind_h )
